@@ -23,12 +23,19 @@ class Blog
   end
 
   def publish_posts
-    puts @posts
+    @posts.each do | post |
+      puts post.title
+      puts "*" * post.title.length
+      puts post.text
+      puts "----------------"
+      puts ""
+    end
   end
 end
 
 # Title, date, text
 class Post
+  attr_accessor(:title, :text)
   def initialize(title, date, text)
     @title = title
     @date = date
